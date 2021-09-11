@@ -1,0 +1,287 @@
+.intro {
+    height: 100vh;
+    max-height: 825px;
+    min-height: 640px;
+
+    background: no-repeat center/cover url(../images/intro/background.jpg);
+
+    .container-fluid {
+        height: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        justify-items: center;
+        align-content: center;
+    }
+
+    //////////////////////////////////////////////////////////////////////
+    &__smoke {
+        // outline: 1px solid red;
+        width: 50%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        // background-image: url(../images/intro/smoke.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: bottom 0 right;
+
+        // animation: animate 3s linear infinite;
+
+        @keyframes animate {
+            from {
+                // background-position: bottom 0 right;
+                // background-size: 100% 100%;
+                background-position: right bottom -700%;
+                background-size: 100%;
+            }
+
+            50% {
+                background-size: 120%;
+            }
+
+
+            to {
+                // background-position: bottom -30% right;
+                // background-size: 50% 400%;
+                background-position: right bottom 400%;
+                background-size: 100%;
+
+            }
+        }
+
+
+
+    }
+
+    &__image {
+        // outline: 1px solid green;
+        display: none !important;
+        height: 100%;
+        width: 100%;
+
+        position: relative;
+
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            margin-top: auto;
+            max-width: 320px;
+            z-index: 1;
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////
+
+    h1 {
+        max-width: 300px;
+        text-align: center;
+    }
+
+    p {
+        max-width: 300px;
+        margin: 15px auto 0;
+        color: $white;
+        text-align: center;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    .btn {
+        margin: 25px auto 0;
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        font-size: 15px;
+    }
+
+    @media (min-width: $sm) {
+        min-height: 750px;
+
+        &__image img {
+            max-width: 450px;
+        }
+    }
+
+    @media (min-width: $md) {
+        height: 100vh;
+        max-height: 1024px;
+        min-height: 900px;
+
+        .container-fluid {
+            display: grid;
+            grid-template: 1fr / auto 1fr;
+
+        }
+
+        &__image {
+            grid-area: 1 / 2 / -1 / -1;
+            place-self: end;
+
+            img {
+                max-width: 400px;
+            }
+        }
+
+        &__content {
+            justify-self: start;
+            grid-area: 1 / 1 / 2 / -1;
+        }
+
+        h1 {
+            margin-top: 290px;
+            text-align: left;
+            max-width: 687px;
+        }
+
+        p {
+            margin: 30px 0 0;
+            max-width: 325px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .btn {
+            margin: 45px 0 0;
+            width: 211px;
+            height: 56px;
+            font-size: 18px;
+        }
+    }
+
+    @media (min-width: $xl) {
+        height: 100vh;
+        max-height: 1024px;
+        min-height: 830px;
+
+        &__image img {
+            max-width: 450px;
+        }
+    }
+
+    @media (min-width: $xxl) {
+        &__image {
+            margin-right: -80px;
+
+            img {
+                max-width: 550px;
+            }
+        }
+    }
+}
+
+
+
+main {
+    overflow: visible;
+}
+
+
+.intro {
+    position: relative;
+
+    .test1,
+    .test2,
+    .test3,
+    .test4 {
+        position: absolute;
+        width: 200%;
+        height: 100%;
+
+    }
+
+    .test1 {
+        // display: none;
+
+        outline: 1px solid red;
+        outline-offset: -2px;
+
+        // right: 0;
+        // bottom: 0;
+
+        background: no-repeat bottom center/cover url(../images/intro/bg1.png);
+
+        animation: anim1 300s linear infinite;
+
+        // @keyframes anim1 {
+        //     from {
+        //         transform: translateX(0);
+        //     }
+
+        //     to {
+        //         transform: translateX(50%);
+        //     }
+        // }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+    .test2 {
+        display: none;
+
+        // outline: 1px solid red;
+        // outline-offset: -2px;
+
+        left: 0;
+        bottom: 0;
+        opacity: 0.5;
+
+        background: no-repeat bottom center/cover url(../images/intro/bg1.png);
+
+        animation: anim2 150s linear infinite;
+
+        // @keyframes anim2 {
+        //     from {
+        //         transform: translateX(0);
+        //     }
+
+        //     to {
+        //         transform: translateX(-50%);
+        //     }
+        // }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+
+    .test3 {
+        left: 0;
+        bottom: 0;
+        opacity: 0.5;
+
+        display: none;
+
+        // outline: 1px solid red;
+        // outline-offset: -2px;
+
+        background: no-repeat bottom center/cover url(../images/intro/smoke1.png);
+
+        animation: anim3 50s linear infinite;
+        animation-fill-mode: alternate;
+
+        // @keyframes anim3 {
+        //     from {
+        //         transform: translateY(0%) translateX(-2%);
+        //     }
+
+        //     25% {
+        //         transform: translateY(10%) translateX(-10%);
+        //     }
+
+        //     50% {
+        //         transform: translateY(5%) translateX(-5%);
+        //     }
+
+        //     75% {
+        //         transform: translateY(8%) translateX(-10%);
+        //     }
+
+        //     to {
+        //         transform: translateY(0) translateX(-2%);
+        //     }
+        // }
+    }
+}
